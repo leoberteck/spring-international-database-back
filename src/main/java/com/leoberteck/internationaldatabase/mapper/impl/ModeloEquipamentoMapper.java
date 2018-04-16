@@ -26,7 +26,7 @@ public class ModeloEquipamentoMapper implements BaseMapper<ModeloEquipamento, Mo
             , modeloEquipamento.getVlLargura()
             , modeloEquipamento.getVlComprimento()
             , modeloEquipamento.getVlCapacidade()
-            , modeloEquipamento.getCdDescModeloEquipamento().getI18N()
+            , modeloEquipamento.getCdDescModeloEquipamento() != null ? modeloEquipamento.getCdDescModeloEquipamento().getI18N() : null
             , modeloEquipamento.getDescModeloEquipamentoI18N()
         );
     }

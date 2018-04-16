@@ -10,6 +10,8 @@ public class ModeloEquipamentoDTO {
     private Long cdDescModeloEquipamento;
     private String descModeloEquipamento;
 
+    public ModeloEquipamentoDTO() { }
+
     public ModeloEquipamentoDTO(Long cdModeloEquipamento, Double vlEspacamento, Integer cdIcone, Double vlLargura, Double vlComprimento, Double vlCapacidade, Long cdDescModeloEquipamento, String descModeloEquipamento) {
         this.cdModeloEquipamento = cdModeloEquipamento;
         this.vlEspacamento = vlEspacamento;

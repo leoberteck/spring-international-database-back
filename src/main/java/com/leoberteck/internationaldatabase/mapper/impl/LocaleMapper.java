@@ -34,7 +34,7 @@ public class LocaleMapper implements BaseMapper<Locale,LocaleDTO> {
             localeDTO.getLcid()
             , localeDTO.getCode()
             , localeDTO.getCharset()
-            , i18nRepository.getOne(localeDTO.getCdDescricao())
+            , localeDTO.getCdDescricao() != null ? i18nRepository.getOne(localeDTO.getCdDescricao()) : null
             , localeDTO.getDescricao()
         );
     }

@@ -26,6 +26,9 @@ public class ModeloEquipamento {
     @Column(name = "DESC_MODELO_EQUIPAMENTO")
     private String descModeloEquipamento;
 
+    public ModeloEquipamento() {
+    }
+
     public ModeloEquipamento(Long cdModeloEquipamento, Double vlEspacamento, Integer cdIcone, Double vlLargura, Double vlComprimento, Double vlCapacidade, I18N cdDescModeloEquipamento, String descModeloEquipamento) {
         this.cdModeloEquipamento = cdModeloEquipamento;
         this.vlEspacamento = vlEspacamento;

@@ -1,5 +1,6 @@
 package com.leoberteck.internationaldatabase.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @SequenceGenerator(name = "SEQ_TRADUCAO", sequenceName = "SEQ_TRADUCAO", allocationSize = 1)
 @Table(name = "TRADUCAO")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "cdId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "cdId", scope = Long.class)
 public class Traducao {
 
     @Id
@@ -19,10 +20,14 @@ public class Traducao {
     private String descValor;
     @ManyToOne
     @JoinColumn(name = "CD_I18N", referencedColumnName = "I18N", nullable = false)
+    @JsonBackReference
     private I18N cdI18n;
     @ManyToOne
     @JoinColumn(name = "CD_LOCALE", referencedColumnName = "LCID")
     private Locale cdLocale;
+
+    public Traducao() {
+    }
 
     public Long getCdId() {
         return cdId;

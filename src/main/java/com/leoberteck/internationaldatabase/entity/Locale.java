@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "CFG_LOCALES")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "lcid")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "lcid", scope = Long.class)
 public class Locale {
     @Id
     @Column(name = "LCID")
@@ -22,7 +22,7 @@ public class Locale {
     @Column(name = "DESCRICAO")
     private String descricao;
 
-    public Locale() {  }
+    public Locale() { }
 
     public Locale(Long lcid, String code, String charset, I18N cdDescricao, String descricao) {
         this.lcid = lcid;

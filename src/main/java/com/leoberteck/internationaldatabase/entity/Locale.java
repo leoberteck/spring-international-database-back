@@ -72,6 +72,7 @@ public class Locale {
         this.descricao = descricao;
     }
 
+    @Transient
     public String getDescricaoI18N(){
         return I18N.getTranslationOrDefault(getCdDescricao(), getDescricao());
     }

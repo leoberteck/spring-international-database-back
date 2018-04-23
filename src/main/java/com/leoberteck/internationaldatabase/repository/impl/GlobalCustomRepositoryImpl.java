@@ -208,6 +208,14 @@ public class GlobalCustomRepositoryImpl<T, ID, REP extends JpaRepository<T, ID>>
         return executeWithFilter(locale, () -> repository.findAll(example, pageable));
     }
 
+    /**
+     * Ativa o filtro de locale na sessao do hibernate e
+     * executa uma funçao do JPA.
+     * @param locale O LCID da localidade do request
+     * @param statement A funçao JPA a ser executada
+     * @param <A> O tipo do retorno da funçao
+     * @return O retorno da funcao JPA executa com filtro de localidade
+     */
     private <A> A executeWithFilter(Long locale, Statement<A> statement){
         //Obtain the entity manager for the current transaction
         EntityManagerHolder holder = (EntityManagerHolder) TransactionSynchronizationManager.getResource(entityManagerFactory);

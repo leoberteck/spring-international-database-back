@@ -23,7 +23,7 @@ public class LocaleMapper implements BaseMapper<Locale,LocaleDTO> {
             locale.getLcid()
             , locale.getCode()
             , locale.getCharset()
-            , locale.getCdDescricao().getI18N()
+            , locale.getCdDescricao() != null ? locale.getCdDescricao().getI18N() : null
             , locale.getDescricaoI18N()
         );
     }
